@@ -1,0 +1,11 @@
+# Flex install branding (MONO-6 recipe-guidelines). Delete this file or set enabled: false for no welcome output.
+symfinity_recipe:
+    branding:
+        enabled: true
+        signature: standard
+        uvp: dev-safe
+        doc_url: null
+        quick_command: null
+    packages:
+        symfinity/omnia-ipsum:
+            uvp: dev-safe

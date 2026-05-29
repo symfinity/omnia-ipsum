@@ -1,0 +1,33 @@
+# Default configuration for Omnia Ipsum
+# Copy this file to your project's config/packages/ directory and customize as needed
+
+omnia_ipsum:
+    # Image settings
+    images:
+        default_provider: 'picsum'       # Available: picsum, placeholder, dummyimage, placehold, ui-avatars
+        default_width: 600               # Default width (1-5000)
+        default_height: 400              # Default height (1-5000)
+
+    # Video settings
+    videos:
+        default_provider: 'gcs'          # Available: gcs (Google Cloud Storage)
+        default_width: 1920              # Default width (1-3840)
+        default_height: 1080             # Default height (1-2160)
+        default_duration: 30             # Default duration in seconds (1-120)
+
+    # Audio settings
+    audios:
+        default_provider: 'silence'      # Available: silence
+        default_duration: 10             # Default duration in seconds (1-60)
+
+    # Lorem Ipsum text settings
+    text:
+        default_paragraphs: 3            # Default paragraphs (1-100)
+        default_sentences: 5             # Default sentences (1-100)
+        default_words: 50                # Default words (1-1000)
+
+    # Faker settings
+    faker:
+        locale: 'en_US'                  # Locale: en_US, de_DE, fr_FR, es_ES, etc.
+        # seed omitted = random (set an int in your app config to fix Faker output)
+

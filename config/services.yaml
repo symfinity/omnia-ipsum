@@ -1,0 +1,65 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  # Register all services
+  Symfinity\OmniaIpsum\:
+    resource: '../src/*'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/OmniaIpsumBundle.php'
+
+  # Image Provider Manager
+  Symfinity\OmniaIpsum\Service\ImageProviderManager:
+    arguments:
+      $config: '%omnia_ipsum.config%'
+
+  # Video Provider Manager
+  Symfinity\OmniaIpsum\Service\VideoProviderManager:
+    arguments:
+      $config: '%omnia_ipsum.config%'
+
+  # Audio Provider Manager
+  Symfinity\OmniaIpsum\Service\AudioProviderManager:
+    arguments:
+      $config: '%omnia_ipsum.config%'
+
+  # Text Generator
+  Symfinity\OmniaIpsum\Service\TextGenerator:
+    arguments:
+      $config: '%omnia_ipsum.config%'
+
+  # Faker Factory
+  Symfinity\OmniaIpsum\Service\FakerFactory:
+    arguments:
+      $config: '%omnia_ipsum.config%'
+
+  # Twig Extension
+  Symfinity\OmniaIpsum\Twig\OmniaIpsumExtension:
+    tags: ['twig.extension']
+
+  # Twig Runtimes
+  Symfinity\OmniaIpsum\Twig\Runtime\ImageRuntime:
+    tags: ['twig.runtime']
+
+  Symfinity\OmniaIpsum\Twig\Runtime\VideoRuntime:
+    tags: ['twig.runtime']
+
+  Symfinity\OmniaIpsum\Twig\Runtime\AudioRuntime:
+    tags: ['twig.runtime']
+
+  Symfinity\OmniaIpsum\Twig\Runtime\TextRuntime:
+    tags: ['twig.runtime']
+
+  Symfinity\OmniaIpsum\Twig\Runtime\FakerRuntime:
+    tags: ['twig.runtime']
+
+  # Provider Health Checker
+  Symfinity\OmniaIpsum\Service\ProviderHealthChecker: ~
+
+  # Console Commands
+  Symfinity\OmniaIpsum\Command\:
+    resource: '../src/Command'
+    tags: ['console.command']
+
