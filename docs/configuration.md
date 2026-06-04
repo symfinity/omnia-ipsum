@@ -283,4 +283,3 @@ omnia_ipsum:
 - [Quick Reference](quickstart.md) - How to use in templates
 - [Image Providers](images.md) - Available providers
 - [Faker Integration](faker.md) - Faker formatters
-

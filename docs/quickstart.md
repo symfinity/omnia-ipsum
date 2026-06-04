@@ -244,4 +244,3 @@ omnia_ipsum:
 - [CHANGELOG.md](../CHANGELOG.md) - Version history
 - [CONTRIBUTING.md](../CONTRIBUTING.md) - How to contribute
 - [GitHub Issues](https://github.com/symfinity/omnia-ipsum/issues) - Bug reports
-

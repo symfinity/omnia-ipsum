@@ -361,4 +361,3 @@ omnia_ipsum:
 - [FakerPHP Documentation](https://fakerphp.github.io/) - Complete formatter reference
 - [Usage Guide](usage.md) - More examples
 - [Configuration](configuration.md) - Set locale and seed
-

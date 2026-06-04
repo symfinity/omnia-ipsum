@@ -342,4 +342,3 @@ Use in templates:
 
 - [Usage Guide](usage.md) - How to use images in templates
 - [Configuration](configuration.md) - Set default provider
-

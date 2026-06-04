@@ -226,4 +226,3 @@ Timeout after 5 seconds
 - [Image Providers](images.md) - Image provider details
 - [Video Providers](videos.md) - Video provider details
 - [Audio Providers](audios.md) - Audio provider details
-

@@ -10,6 +10,35 @@
 
 </div>
 
+---
+
+## Documentation
+
+| Topic | Page |
+|-------|------|
+| Audios | [docs/audios.md](docs/audios.md) |
+| Commands | [docs/commands.md](docs/commands.md) |
+| Configuration | [docs/configuration.md](docs/configuration.md) |
+| Faker | [docs/faker.md](docs/faker.md) |
+| Images | [docs/images.md](docs/images.md) |
+| Index | [docs/index.md](docs/index.md) |
+| Installation | [docs/installation.md](docs/installation.md) |
+| Migration | [docs/migration.md](docs/migration.md) |
+| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
+| Text | [docs/text.md](docs/text.md) |
+| Videos | [docs/videos.md](docs/videos.md) |
+
+## Requirements
+
+- PHP 8.2+
+- Symfony 6.4+ (Flex recipe when available)
+
+## Install
+
+```bash
+composer require symfinity/omnia-ipsum
+```
+
 ## Features
 
 - **Placeholder Images** - 5 providers (Picsum, Placeholder.com, DummyImage, Placehold.co, UI Avatars)
@@ -19,98 +48,3 @@
 - **Lorem Ipsum Text** - Paragraphs, sentences, words, titles
 - **Fake Data** - FakerPHP integration for realistic data (with `fake_text()` for realistic content)
 - **Twig Functions** - Simple, intuitive template functions (Runtime-based architecture)
-
-## Installation
-
-```bash
-composer require symfinity/omnia-ipsum
-```
-
-## Quick Start
-
-### 1. Use in templates
-
-```twig
-{# Images #}
-<img src="{{ omnia_image(600, 400) }}" alt="Placeholder">
-<img src="{{ omnia_image(800, 600, {provider: 'picsum'}) }}" alt="Photo">
-<img src="{{ omnia_avatar('John Doe', 100) }}" alt="Avatar">
-
-{# Videos #}
-<video src="{{ omnia_video(1920, 1080, {video: 'sintel'}) }}" controls></video>
-
-{# Audio #}
-<audio src="{{ omnia_audio(10) }}" controls></audio>
-
-{# Text #}
-<h1>{{ lorem_title() }}</h1>
-<p>{{ lorem_paragraphs(3) }}</p>
-
-{# Fake Data #}
-<p>{{ fake('name') }} - {{ fake('email') }}</p>
-<p>{{ fake_text(200) }}</p> {# Realistic text instead of Lorem Ipsum #}
-```
-
-### 2. Configure (optional)
-
-```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
-    images:
-        default_provider: 'picsum'
-    faker:
-        locale: 'de_DE'
-```
-
-### 3. Disable in production
-
-```php
-// config/bundles.php
-return [
-    // ...
-    Symfinity\OmniaIpsum\OmniaIpsumBundle::class => ['dev' => true, 'test' => true],
-];
-```
-
-## Console Commands
-
-```bash
-# List all available providers
-php bin/console omnia:list-providers
-
-# Test all providers for availability
-php bin/console omnia:test-providers
-
-# Validate configuration
-php bin/console omnia:validate
-```
-
-## Documentation
-
-- **[Quick Reference](docs/quickstart.md)** - Get started in 5 minutes
-- **[Console Commands](docs/commands.md)** - Provider management and testing
-- **[Image Providers](docs/images.md)** - 5 providers including Picsum, Placeholder.com, UI Avatars
-- **[Video Providers](docs/videos.md)** - Google Cloud Storage (13 videos)
-- **[Audio Providers](docs/audios.md)** - Silent audio generation
-- **[Text Generation](docs/text.md)** - Lorem Ipsum + Faker realistic text
-- **[Configuration](docs/configuration.md)** - All configuration options
-
-## Requirements
-
-- PHP 8.2 or higher
-- Symfony 7.4 LTS (see `composer.json` for component constraints)
-- Twig 3.0 or higher
-
-## Migration from neuralglitch/omnia-ipsum
-
-See **[docs/migration.md](docs/migration.md)** for namespace, bundle class, Composer name, and Symfony floor changes.
-
-## Support
-
-- [GitHub Issues](https://github.com/symfinity/omnia-ipsum/issues)
-- [Security](.github/SECURITY.md)
-- [Contributing](CONTRIBUTING.md)
-
-## License
-
-[MIT](LICENSE)
