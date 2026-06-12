@@ -4,47 +4,58 @@
 
 ### All-in-One Placeholder Text, Images, Audios and Videos for Symfony
 
-[![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
-[![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
+[![PHP Version](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
+[![Symfony](https://img.shields.io/badge/Symfony-6.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
+<br/>
+[![CI](https://github.com/symfinity/omnia-ipsum/actions/workflows/ci.yml/badge.svg)](https://github.com/symfinity/omnia-ipsum/actions/workflows/ci.yml)
+<br/>
+[![Release](https://img.shields.io/packagist/v/symfinity/omnia-ipsum.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/omnia-ipsum)
+[![Downloads](https://img.shields.io/packagist/dt/symfinity/omnia-ipsum.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/omnia-ipsum)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 </div>
 
----
+> **Read-only mirror.** Source of truth: [symfinity/symfinity](https://github.com/symfinity/symfinity) (`packages/omnia-ipsum/`). See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
-## Documentation
+## Features
+- **Placeholder Images** - 5 providers with real photos and colored placeholders
+- **Avatar Generation** - Automatic initials and colors
+- **Placeholder Videos** - Professional video clips
+- **Placeholder Audio** - Music tracks and silent audio
+- **Lorem Ipsum Text** - Classic placeholder text generation
+- **Fake Data** - FakerPHP integration for realistic content
+- **Twig Functions** - Simple, intuitive template functions
 
-| Topic | Page |
-|-------|------|
-| Audios | [docs/audios.md](docs/audios.md) |
-| Commands | [docs/commands.md](docs/commands.md) |
-| Configuration | [docs/configuration.md](docs/configuration.md) |
-| Faker | [docs/faker.md](docs/faker.md) |
-| Images | [docs/images.md](docs/images.md) |
-| Index | [docs/index.md](docs/index.md) |
-| Installation | [docs/installation.md](docs/installation.md) |
-| Migration | [docs/migration.md](docs/migration.md) |
-| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
-| Text | [docs/text.md](docs/text.md) |
-| Videos | [docs/videos.md](docs/videos.md) |
+## Prerequisites
 
-## Requirements
+Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
 
-- PHP 8.2+
-- Symfony 6.4+ (Flex recipe when available)
-
-## Install
-
+## Installation
 ```bash
 composer require symfinity/omnia-ipsum
 ```
 
-## Features
+The Flex recipe registers the bundle for **dev** and **test** only. **Do not enable in production** — see [Installation](docs/installation.md).
 
-- **Placeholder Images** - 5 providers (Picsum, Placeholder.com, DummyImage, Placehold.co, UI Avatars)
-- **Avatar Generation** - UI Avatars with automatic initials and colors
-- **Placeholder Videos** - Google Cloud Storage with 13 professional videos
-- **Placeholder Audio** - Silent WAV generation (data URLs)
-- **Lorem Ipsum Text** - Paragraphs, sentences, words, titles
-- **Fake Data** - FakerPHP integration for realistic data (with `fake_text()` for realistic content)
-- **Twig Functions** - Simple, intuitive template functions (Runtime-based architecture)
+## Documentation
+- **[Quickstart](docs/quickstart.md)** - Get started in 5 minutes
+- **[Installation](docs/installation.md)** - Flex, manual setup, environments
+- **[Image Providers](docs/images.md)** - All image providers and options
+- **[Video Providers](docs/videos.md)** - Video options and clips
+- **[Audio Providers](docs/audios.md)** - Audio providers and tracks
+- **[Text Generation](docs/text.md)** - Lorem Ipsum and Faker integration
+- **[Faker Integration](docs/faker.md)** - All available fake data formatters
+- **[Configuration](docs/configuration.md)** - Configuration options
+
+## Requirements
+- PHP 8.1 or higher
+- Symfony 6.4, 7.x, or 8.x
+- Twig 3.0 or higher
+
+## Support
+- [GitHub Issues](https://github.com/symfinity/omnia-ipsum/issues)
+- [Security](.github/SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+## License
+[MIT](LICENSE)

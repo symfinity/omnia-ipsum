@@ -1,11 +1,5 @@
-.phpunit.result.cache
-.php-cs-fixer.cache
-.gitconfig
-/psalm-baseline.xml
-/.psalm-cache/
-/.rector-cache/
-/phpunit.xml
-/phpstan.neon
-/.php-cs-fixer.php
-/var/
 /vendor/
+/.phpunit.cache/
+/.phpunit.result.cache
+/build/
+composer.lock

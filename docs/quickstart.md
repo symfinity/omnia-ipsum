@@ -12,8 +12,28 @@ Bundle is auto-registered via Symfony Flex (dev and test environments only).
 
 Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 
-## All Functions at a Glance
+## Quick Start
+```twig
+{# Images #}
+<img src="{{ omnia_image(600, 400) }}" alt="Placeholder">
+<img src="{{ omnia_avatar('John Doe', 100) }}" alt="Avatar">
 
+{# Videos #}
+<video src="{{ omnia_video(1920, 1080) }}" controls></video>
+
+{# Audio #}
+<audio src="{{ omnia_audio(10) }}" controls></audio>
+
+{# Text #}
+<h1>{{ lorem_title() }}</h1>
+<p>{{ lorem_paragraphs(3) }}</p>
+
+{# Fake Data #}
+<p>{{ fake('name') }} - {{ fake('email') }}</p>
+<p>{{ fake_text(200) }}</p>
+```
+
+## All Functions at a Glance
 ```twig
 {# Images (5 providers) #}
 {{ omnia_image(width, height, options) }}
@@ -40,7 +60,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ## Common Examples
 
 ### Hero Section
-
 ```twig
 <section class="hero">
     <video src="{{ omnia_video(1920, 1080, {clip: 'powerpoint-1'}) }}" 
@@ -53,7 +72,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ```
 
 ### Product Grid
-
 ```twig
 <div class="product-grid">
     {% for i in 1..12 %}
@@ -68,7 +86,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ```
 
 ### Team Section
-
 ```twig
 <div class="team">
     {% for i in 1..6 %}
@@ -84,7 +101,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ```
 
 ### Blog Post
-
 ```twig
 <article>
     <img src="{{ omnia_image(1200, 400, {provider: 'picsum'}) }}" class="featured">
@@ -100,7 +116,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ```
 
 ### Media Gallery
-
 ```twig
 <div class="gallery">
     {# Images #}
@@ -124,7 +139,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ```
 
 ## Image Providers
-
 ```twig
 {# Picsum - Real photos #}
 {{ omnia_image(800, 600, {provider: 'picsum'}) }}
@@ -146,7 +160,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 **See [Image Providers](images.md) for all 5 providers.**
 
 ## Video Clips
-
 ```twig
 {# Pre-built clips (CFR, professional quality) #}
 {{ omnia_video(1920, 1080, {clip: 'powerpoint-1'}) }}
@@ -162,7 +175,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 **See [Video Providers](videos.md) for details.**
 
 ## Faker Formatters
-
 ```twig
 {# Personal #}
 {{ fake('name') }}
@@ -198,7 +210,6 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 **See [Faker Integration](faker.md) for 100+ formatters.**
 
 ## Configuration
-
 ```yaml
 # config/packages/omnia_ipsum.yaml
 omnia_ipsum:
@@ -216,9 +227,7 @@ omnia_ipsum:
 **See [Configuration](configuration.md) for all options.**
 
 ## Best Practices
-
 ### ✅ DO
-
 - Use in development/testing only
 - Disable in production (`['dev' => true, 'test' => true]`)
 - Choose appropriate providers (Picsum for photos, PlaceKitten for fun)
@@ -226,21 +235,18 @@ omnia_ipsum:
 - Keep audio duration short (<30s)
 
 ### ❌ DON'T
-
 - Don't use in production
 - Don't generate long audio (>60s causes memory issues)
 - Don't rely on data URLs for large files
 - Don't use Faker for passwords/tokens
 
 ## Next Steps
-
 - **[Image Providers](images.md)** - Learn about all image providers
 - **[Video Providers](videos.md)** - Video options and clips
 - **[Faker Integration](faker.md)** - All available fake data formatters
 - **[Configuration](configuration.md)** - Customize defaults
 
 ## See Also
-
 - [CHANGELOG.md](../CHANGELOG.md) - Version history
 - [CONTRIBUTING.md](../CONTRIBUTING.md) - How to contribute
 - [GitHub Issues](https://github.com/symfinity/omnia-ipsum/issues) - Bug reports
