@@ -241,6 +241,7 @@ omnia_ipsum:
 - Don't use Faker for passwords/tokens
 
 ## Next Steps
+- **[Upgrade](upgrade.md)** - Patch and relocation migration
 - **[Image Providers](images.md)** - Learn about all image providers
 - **[Video Providers](videos.md)** - Video options and clips
 - **[Faker Integration](faker.md)** - All available fake data formatters

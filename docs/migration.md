@@ -17,8 +17,8 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 
 | Constraint | Legacy | Symfinity port |
 |------------|--------|----------------|
-| PHP | `>=8.1` | `>=8.2` |
-| Symfony components | `^6.4 \|\| ^7.0 \|\| ^8.0` | `^7.4` (org consumer floor) |
+| PHP | `>=8.1` | `>=8.1` (CI tests 8.2+) |
+| Symfony components | `^6.4 \|\| ^7.0 \|\| ^8.0` | `^6.4 \|\| ^7.0 \|\| ^8.0` |
 
 ## Application changes
 

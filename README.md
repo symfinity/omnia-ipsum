@@ -42,6 +42,8 @@ The Flex recipe registers the bundle for **dev** and **test** only. **Do not ena
 ## Documentation
 - **[Quickstart](docs/quickstart.md)** - Get started in 5 minutes
 - **[Installation](docs/installation.md)** - Flex, manual setup, environments
+- **[Upgrade](docs/upgrade.md)** - Version migration (0.1.x patches, Symfinity relocation)
+- **[Migration from neuralglitch](docs/migration.md)** - Replace `neuralglitch/omnia-ipsum`
 - **[Image Providers](docs/images.md)** - All image providers and options
 - **[Video Providers](docs/videos.md)** - Video options and clips
 - **[Audio Providers](docs/audios.md)** - Audio providers and tracks
@@ -50,7 +52,7 @@ The Flex recipe registers the bundle for **dev** and **test** only. **Do not ena
 - **[Configuration](docs/configuration.md)** - Configuration options
 
 ## Requirements
-- PHP 8.1 or higher
+- PHP 8.2 or higher (8.1 may work; CI tests 8.2+)
 - Symfony 6.4, 7.x, or 8.x
 - Twig 3.0 or higher
 

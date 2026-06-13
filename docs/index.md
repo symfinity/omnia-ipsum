@@ -1,16 +1,17 @@
 # Overview
 
-Package handbook for this library.
+Handbook for **symfinity/omnia-ipsum** — placeholder images, media, Lorem Ipsum, and Faker data for Symfony prototyping (dev/test only).
 
 ## Pages
 
 - [Installation](installation.md)
-- [Audios](audios.md)
-- [Commands](commands.md)
-- [Configuration](configuration.md)
-- [Faker](faker.md)
-- [Images](images.md)
-- [Migration](migration.md)
 - [Quickstart](quickstart.md)
-- [Text](text.md)
+- [Configuration](configuration.md)
+- [Upgrade](upgrade.md)
+- [Migration from neuralglitch](migration.md)
+- [Images](images.md)
 - [Videos](videos.md)
+- [Audios](audios.md)
+- [Text](text.md)
+- [Faker](faker.md)
+- [Commands](commands.md)
