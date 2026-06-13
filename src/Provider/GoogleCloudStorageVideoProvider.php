@@ -38,6 +38,9 @@ final class GoogleCloudStorageVideoProvider implements VideoProviderInterface
     public function generate(int $width, int $height, array $options = []): string
     {
         $video = $options['video'] ?? 'big-buck-bunny';
+        if (!\is_string($video)) {
+            $video = 'big-buck-bunny';
+        }
 
         $filename = self::VIDEOS[$video] ?? self::VIDEOS['big-buck-bunny'];
 

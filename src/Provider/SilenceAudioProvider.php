@@ -16,6 +16,12 @@ final class SilenceAudioProvider implements AudioProviderInterface
     {
         $sampleRate = $options['sample_rate'] ?? 44100;
         $channels = $options['channels'] ?? 2;
+        if (!\is_int($sampleRate)) {
+            $sampleRate = \is_numeric($sampleRate) ? (int) $sampleRate : 44100;
+        }
+        if (!\is_int($channels)) {
+            $channels = \is_numeric($channels) ? (int) $channels : 2;
+        }
 
         // Limit duration to prevent memory issues
         $duration = min(60, max(1, $duration));

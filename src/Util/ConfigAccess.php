@@ -67,6 +67,18 @@ final class ConfigAccess
     {
         $sectionData = $config[$section] ?? null;
 
-        return \is_array($sectionData) ? $sectionData : [];
+        if (!\is_array($sectionData)) {
+            return [];
+        }
+
+        /** @var array<string, mixed> $normalized */
+        $normalized = [];
+        foreach ($sectionData as $key => $value) {
+            if (\is_string($key)) {
+                $normalized[$key] = $value;
+            }
+        }
+
+        return $normalized;
     }
 }
