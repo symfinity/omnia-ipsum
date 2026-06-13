@@ -6,6 +6,7 @@ namespace Symfinity\OmniaIpsum\Service;
 
 use Symfinity\OmniaIpsum\Provider\GoogleCloudStorageVideoProvider;
 use Symfinity\OmniaIpsum\Provider\VideoProviderInterface;
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
 
 final class VideoProviderManager
 {
@@ -27,7 +28,8 @@ final class VideoProviderManager
      */
     public function generate(int $width, int $height, array $options = []): string
     {
-        $providerName = $options['provider'] ?? ($this->config['videos']['default_provider'] ?? 'gcs');
+        $providerName = ConfigAccess::nullableString($options, 'provider')
+            ?? ConfigAccess::sectionString($this->config, 'videos', 'default_provider', 'gcs');
 
         $provider = $this->getProvider($providerName);
 

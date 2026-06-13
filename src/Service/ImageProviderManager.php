@@ -10,6 +10,7 @@ use Symfinity\OmniaIpsum\Provider\PicsumProvider;
 use Symfinity\OmniaIpsum\Provider\PlaceholderProvider;
 use Symfinity\OmniaIpsum\Provider\PlaceholdProvider;
 use Symfinity\OmniaIpsum\Provider\UiAvatarsProvider;
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
 
 final class ImageProviderManager
 {
@@ -31,11 +32,8 @@ final class ImageProviderManager
      */
     public function generate(int $width, int $height, array $options = []): string
     {
-        $providerName = $options['provider'] ?? $this->config['images']['default_provider'] ?? 'placeholder';
-
-        if (!\is_string($providerName)) {
-            $providerName = 'placeholder';
-        }
+        $providerName = ConfigAccess::nullableString($options, 'provider')
+            ?? ConfigAccess::sectionString($this->config, 'images', 'default_provider', 'placeholder');
 
         $provider = $this->getProvider($providerName);
 

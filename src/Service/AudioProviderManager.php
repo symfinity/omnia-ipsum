@@ -6,6 +6,7 @@ namespace Symfinity\OmniaIpsum\Service;
 
 use Symfinity\OmniaIpsum\Provider\AudioProviderInterface;
 use Symfinity\OmniaIpsum\Provider\SilenceAudioProvider;
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
 
 final class AudioProviderManager
 {
@@ -27,11 +28,8 @@ final class AudioProviderManager
      */
     public function generate(int $duration, array $options = []): string
     {
-        $providerName = $options['provider'] ?? $this->config['audios']['default_provider'] ?? 'silence';
-
-        if (!\is_string($providerName)) {
-            $providerName = 'silence';
-        }
+        $providerName = ConfigAccess::nullableString($options, 'provider')
+            ?? ConfigAccess::sectionString($this->config, 'audios', 'default_provider', 'silence');
 
         $provider = $this->getProvider($providerName);
 

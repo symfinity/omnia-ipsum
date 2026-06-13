@@ -3,3 +3,8 @@ parameters:
     paths:
         - src
         - tests
+
+    # Enable stricter analysis
+    checkGenericClassInNonGenericObjectType: true
+    reportUnmatchedIgnoredErrors: false
+

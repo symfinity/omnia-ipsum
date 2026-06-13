@@ -6,6 +6,7 @@ namespace Symfinity\OmniaIpsum\Service;
 
 use Faker\Factory;
 use Faker\Generator;
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
 
 /**
  * Factory for creating Faker instances with configured locale and seed.
@@ -27,21 +28,24 @@ final class FakerFactory
      */
     public function create(?string $locale = null): Generator
     {
-        $locale ??= $this->config['faker']['locale'] ?? 'en_US';
+        $locale ??= $this->getDefaultLocale();
 
         // Always create a new instance for different locales
         // Don't cache when locale is explicitly provided
-        if ($locale !== ($this->config['faker']['locale'] ?? 'en_US') || null === $this->faker) {
+        if ($locale !== $this->getDefaultLocale() || null === $this->faker) {
             $faker = Factory::create($locale);
             $this->currentLocale = $locale;
 
             // Set seed if configured (only for default locale)
-            if ($locale === ($this->config['faker']['locale'] ?? 'en_US') && isset($this->config['faker']['seed'])) {
-                $faker->seed($this->config['faker']['seed']);
+            if ($locale === $this->getDefaultLocale()) {
+                $seed = $this->getConfiguredSeed();
+                if (null !== $seed) {
+                    $faker->seed($seed);
+                }
             }
 
             // Only cache default locale instance
-            if ($locale === ($this->config['faker']['locale'] ?? 'en_US')) {
+            if ($locale === $this->getDefaultLocale()) {
                 $this->faker = $faker;
             }
 
@@ -56,7 +60,7 @@ final class FakerFactory
      */
     public function getLocale(): string
     {
-        return $this->currentLocale ?? $this->config['faker']['locale'] ?? 'en_US';
+        return $this->currentLocale ?? $this->getDefaultLocale();
     }
 
     /**
@@ -75,5 +79,17 @@ final class FakerFactory
         } catch (\InvalidArgumentException $e) {
             throw new \InvalidArgumentException(sprintf('Faker formatter "%s" does not exist.', $formatter), 0, $e);
         }
+    }
+
+    private function getDefaultLocale(): string
+    {
+        return ConfigAccess::sectionString($this->config, 'faker', 'locale', 'en_US');
+    }
+
+    private function getConfiguredSeed(): ?int
+    {
+        $fakerConfig = ConfigAccess::section($this->config, 'faker');
+
+        return ConfigAccess::nullableInt($fakerConfig, 'seed');
     }
 }

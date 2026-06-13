@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Symfinity\OmniaIpsum\Provider;
 
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
+
 /**
  * Picsum Photos provider (Lorem Picsum).
  *
@@ -14,8 +16,8 @@ final class PicsumProvider implements ImageProviderInterface
     public function generate(int $width, int $height, array $options = []): string
     {
         $grayscale = $options['grayscale'] ?? false;
-        $blur = $options['blur'] ?? null;
-        $seed = $options['seed'] ?? null;
+        $blur = ConfigAccess::nullableInt($options, 'blur');
+        $seed = ConfigAccess::nullableInt($options, 'seed');
 
         $url = sprintf('https://picsum.photos/%d/%d', $width, $height);
 
@@ -25,11 +27,11 @@ final class PicsumProvider implements ImageProviderInterface
         }
 
         if (null !== $blur) {
-            $params[] = 'blur=' . (int) $blur;
+            $params[] = 'blur=' . $blur;
         }
 
         if (null !== $seed) {
-            $params[] = 'random=' . (int) $seed;
+            $params[] = 'random=' . $seed;
         }
 
         if ([] !== $params) {

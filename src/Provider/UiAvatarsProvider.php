@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Symfinity\OmniaIpsum\Provider;
 
+use Symfinity\OmniaIpsum\Util\ConfigAccess;
+
 /**
  * UI Avatars provider for avatar generation.
  *
@@ -13,9 +15,9 @@ final class UiAvatarsProvider implements ImageProviderInterface
 {
     public function generate(int $width, int $height, array $options = []): string
     {
-        $name = $options['name'] ?? '??';
-        $background = $options['background'] ?? null;
-        $color = $options['foreground'] ?? 'ffffff';
+        $name = ConfigAccess::string($options, 'name', '??');
+        $background = ConfigAccess::nullableString($options, 'background');
+        $color = ConfigAccess::string($options, 'foreground', 'ffffff');
         $bold = $options['bold'] ?? false;
         $rounded = $options['rounded'] ?? false;
 
@@ -29,7 +31,7 @@ final class UiAvatarsProvider implements ImageProviderInterface
         ];
 
         if (null !== $background) {
-            $params['background'] = ltrim((string) $background, '#');
+            $params['background'] = ltrim($background, '#');
         }
 
         if ($bold) {

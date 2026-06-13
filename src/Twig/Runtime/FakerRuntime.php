@@ -29,6 +29,8 @@ final class FakerRuntime implements RuntimeExtensionInterface
      */
     public function fakeText(int $maxChars = 200): string
     {
-        return (string) $this->fakerFactory->fake('realText', [$maxChars]);
+        $result = $this->fakerFactory->fake('realText', [$maxChars]);
+
+        return \is_string($result) ? $result : '';
     }
 }
