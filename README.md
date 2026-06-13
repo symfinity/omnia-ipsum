@@ -15,7 +15,9 @@
 
 </div>
 
-> **Read-only mirror.** Source of truth: [symfinity/symfinity](https://github.com/symfinity/symfinity) (`packages/omnia-ipsum/`). See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
+> [!NOTE]
+> **Read-only mirror.** 
+> See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
 ## Features
 - **Placeholder Images** - 5 providers with real photos and colored placeholders
