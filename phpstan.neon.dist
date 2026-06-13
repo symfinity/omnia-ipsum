@@ -3,8 +3,10 @@ parameters:
     paths:
         - src
         - tests
+    scanFiles:
+        - vendor/symfony/console/Command/Command.php
+        - vendor/symfony/console/Tester/CommandTester.php
 
     # Enable stricter analysis
     checkGenericClassInNonGenericObjectType: true
     reportUnmatchedIgnoredErrors: false
-

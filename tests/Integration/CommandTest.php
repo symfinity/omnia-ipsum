@@ -12,12 +12,17 @@ use Symfinity\OmniaIpsum\Service\ImageProviderManager;
 use Symfinity\OmniaIpsum\Service\ProviderHealthChecker;
 use Symfinity\OmniaIpsum\Service\VideoProviderManager;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
 final class CommandTest extends TestCase
 {
-    private Application $application;
+    private ImageProviderManager $imageManager;
+
+    private VideoProviderManager $videoManager;
+
+    private AudioProviderManager $audioManager;
+
+    private ProviderHealthChecker $healthChecker;
 
     protected function setUp(): void
     {
@@ -27,21 +32,15 @@ final class CommandTest extends TestCase
             'audios' => ['default_provider' => 'silence'],
         ];
 
-        $imageManager = new ImageProviderManager($config);
-        $videoManager = new VideoProviderManager($config);
-        $audioManager = new AudioProviderManager($config);
-        $healthChecker = new ProviderHealthChecker($imageManager, $videoManager, $audioManager);
-
-        $this->application = new Application();
-        $this->application->add(new ListProvidersCommand($imageManager, $videoManager, $audioManager));
-        $this->application->add(new TestProvidersCommand($healthChecker));
-        $this->application->add(new ValidateCommand($imageManager, $videoManager, $audioManager));
+        $this->imageManager = new ImageProviderManager($config);
+        $this->videoManager = new VideoProviderManager($config);
+        $this->audioManager = new AudioProviderManager($config);
+        $this->healthChecker = new ProviderHealthChecker($this->imageManager, $this->videoManager, $this->audioManager);
     }
 
     public function testListProvidersCommand(): void
     {
-        $command = $this->application->find('omnia:list-providers');
-        $commandTester = new CommandTester($command);
+        $commandTester = new CommandTester(new ListProvidersCommand($this->imageManager, $this->videoManager, $this->audioManager));
 
         $exitCode = $commandTester->execute([]);
 
@@ -54,8 +53,7 @@ final class CommandTest extends TestCase
 
     public function testTestProvidersCommand(): void
     {
-        $command = $this->application->find('omnia:test-providers');
-        $commandTester = new CommandTester($command);
+        $commandTester = new CommandTester(new TestProvidersCommand($this->healthChecker));
 
         $exitCode = $commandTester->execute([
             '--timeout' => '2',
@@ -68,8 +66,7 @@ final class CommandTest extends TestCase
 
     public function testTestProvidersCommandWithType(): void
     {
-        $command = $this->application->find('omnia:test-providers');
-        $commandTester = new CommandTester($command);
+        $commandTester = new CommandTester(new TestProvidersCommand($this->healthChecker));
 
         $exitCode = $commandTester->execute([
             '--type' => 'images',
@@ -83,8 +80,7 @@ final class CommandTest extends TestCase
 
     public function testValidateCommand(): void
     {
-        $command = $this->application->find('omnia:validate');
-        $commandTester = new CommandTester($command);
+        $commandTester = new CommandTester(new ValidateCommand($this->imageManager, $this->videoManager, $this->audioManager));
 
         $exitCode = $commandTester->execute([]);
 
