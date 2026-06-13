@@ -4,17 +4,24 @@ declare(strict_types=1);
 
 namespace Symfinity\OmniaIpsum\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 final class Configuration implements ConfigurationInterface
 {
+    /**
+     * @psalm-suppress UndefinedInterfaceMethod
+     * @psalm-suppress PossiblyNullReference
+     */
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('omnia_ipsum');
+        /** @var ArrayNodeDefinition $root */
+        $root = $treeBuilder->getRootNode();
 
-        /** @psalm-suppress UndefinedMethod */
-        $treeBuilder->getRootNode()
+        // @phpstan-ignore-next-line - Fluent interface methods are not fully recognized by PHPStan
+        $root
             ->children()
                 ->arrayNode('images')
                     ->addDefaultsIfNotSet()
