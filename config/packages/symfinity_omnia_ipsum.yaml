@@ -1,7 +1,7 @@
 # Default configuration for Omnia Ipsum
 # Copy this file to your project's config/packages/ directory and customize as needed
 
-omnia_ipsum:
+symfinity_omnia_ipsum:
     # Image settings
     images:
         default_provider: 'picsum'       # Available: picsum, placeholder, dummyimage, placehold, ui-avatars
@@ -30,4 +30,3 @@ omnia_ipsum:
     faker:
         locale: 'en_US'                  # Locale: en_US, de_DE, fr_FR, es_ES, etc.
         # seed omitted = random (set an int in your app config to fix Faker output)
-

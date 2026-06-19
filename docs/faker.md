@@ -252,8 +252,8 @@ For unique values within a single page, use a loop variable:
 Set locale in configuration:
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     faker:
         locale: 'de_DE'  # German data
 ```
@@ -273,8 +273,8 @@ Then use in templates:
 Set a seed for consistent data:
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     faker:
         seed: 42  # Same data every time
 ```

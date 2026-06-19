@@ -10,8 +10,8 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 | PSR-4 namespace | `NeuralGlitch\OmniaIpsum\` | `Symfinity\OmniaIpsum\` |
 | Test namespace | `NeuralGlitch\OmniaIpsum\Tests\` | `Symfinity\OmniaIpsum\Tests\` |
 | Bundle class | `NeuralGlitch\OmniaIpsum\OmniaIpsumBundle` | `Symfinity\OmniaIpsum\OmniaIpsumBundle` |
-| Config root key | `omnia_ipsum:` | `omnia_ipsum:` (unchanged) |
-| Config file | `config/packages/omnia_ipsum.yaml` | `config/packages/omnia_ipsum.yaml` |
+| Config root key | `omnia_ipsum:` | `symfinity_omnia_ipsum:` |
+| Config file | `config/packages/symfinity_omnia_ipsum.yaml` | `config/packages/symfinity_omnia_ipsum.yaml` |
 
 ## Composer and Symfony floor
 

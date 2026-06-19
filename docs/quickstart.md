@@ -211,8 +211,8 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 
 ## Configuration
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     images:
         default_provider: 'picsum'      # Default image provider
         

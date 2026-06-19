@@ -11,6 +11,11 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 final class OmniaIpsumExtension extends Extension
 {
+    public function getAlias(): string
+    {
+        return 'symfinity_omnia_ipsum';
+    }
+
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();

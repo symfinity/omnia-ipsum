@@ -14,7 +14,7 @@ composer require symfinity/omnia-ipsum
 
 The recipe applies:
 
-- `config/packages/omnia_ipsum.yaml` from the package default
+- `config/packages/symfinity_omnia_ipsum.yaml` from the package default
 - Bundle registration for **`dev`** and **`test`** environments only
 
 ## Production
@@ -35,7 +35,7 @@ When Flex is unavailable:
 
 1. `composer require symfinity/omnia-ipsum`
 2. Register `Symfinity\OmniaIpsum\OmniaIpsumBundle` for **`dev`** and **`test`** only in `config/bundles.php`
-3. Copy `config/packages/omnia_ipsum.yaml` from the package into your project
+3. Copy `config/packages/symfinity_omnia_ipsum.yaml` from the package into your project
 
 ## Verify installation
 

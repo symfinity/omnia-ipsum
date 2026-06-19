@@ -308,8 +308,8 @@ Generate a title (3-6 capitalized words).
 ## Configuration
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     text:
         default_paragraphs: 5   # Default paragraph count
         default_sentences: 10   # Default sentence count

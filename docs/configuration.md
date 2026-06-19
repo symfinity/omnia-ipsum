@@ -5,8 +5,8 @@ Complete configuration reference for Omnia Ipsum.
 ## Default Configuration
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     # Image settings
     images:
         default_provider: 'placeholder'  # Default image provider
@@ -47,7 +47,7 @@ omnia_ipsum:
 Choose your preferred default image provider:
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     images:
         default_provider: 'picsum'  # Use Picsum Photos by default
 ```
@@ -59,7 +59,7 @@ omnia_ipsum:
 Set default dimensions for all placeholder images:
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     images:
         default_width: 1200   # Wider images by default
         default_height: 800   # Taller images by default
@@ -70,7 +70,7 @@ omnia_ipsum:
 Set default colors (hex, without #):
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     images:
         default_background: '007bff'  # Blue background
         default_foreground: 'ffffff'  # White text
@@ -81,7 +81,7 @@ omnia_ipsum:
 Set default text for placeholders:
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     images:
         default_text: 'Preview Image'  # Custom default text
 ```
@@ -91,7 +91,7 @@ omnia_ipsum:
 ### Lorem Ipsum Defaults
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     text:
         default_paragraphs: 5   # Longer default content
         default_sentences: 10   # More sentences
@@ -105,7 +105,7 @@ omnia_ipsum:
 Change the Faker locale for localized fake data:
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     faker:
         locale: 'de_DE'  # German fake data
 ```
@@ -127,7 +127,7 @@ omnia_ipsum:
 Set a seed for consistent fake data across page loads:
 
 ```yaml
-omnia_ipsum:
+symfinity_omnia_ipsum:
     faker:
         seed: 42  # Always generate the same fake data
 ```
@@ -144,35 +144,38 @@ omnia_ipsum:
 ### Development
 
 ```yaml
-# config/packages/dev/omnia_ipsum.yaml
-omnia_ipsum:
-    images:
-        default_provider: 'picsum'  # Real photos in dev
-    faker:
-        seed: 42  # Consistent data for screenshots
+# config/packages/symfinity_omnia_ipsum.yaml
+when@dev:
+    symfinity_omnia_ipsum:
+        images:
+            default_provider: 'picsum'  # Real photos in dev
+        faker:
+            seed: 42  # Consistent data for screenshots
 ```
 
 ### Testing
 
 ```yaml
-# config/packages/test/omnia_ipsum.yaml
-omnia_ipsum:
-    faker:
-        seed: 12345  # Reproducible test data
+# config/packages/symfinity_omnia_ipsum.yaml
+when@test:
+    symfinity_omnia_ipsum:
+        faker:
+            seed: 12345  # Reproducible test data
 ```
 
 ### Production
 
 ```yaml
-# config/packages/prod/omnia_ipsum.yaml
-# Disable or remove bundle in production!
+# config/packages/symfinity_omnia_ipsum.yaml
+when@prod:
+    # Disable or remove bundle in production!
 ```
 
 ## Complete Example
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     images:
         default_provider: 'picsum'
         default_width: 1200
@@ -265,7 +268,7 @@ The bundle also validates configuration automatically:
 
 ```yaml
 # ❌ Invalid: Width too large
-omnia_ipsum:
+symfinity_omnia_ipsum:
     images:
         default_width: 10000  # Max: 5000
 ```

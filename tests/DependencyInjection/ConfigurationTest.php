@@ -50,7 +50,7 @@ final class ConfigurationTest extends TestCase
     public function testCustomImageConfiguration(): void
     {
         $config = $this->processor->processConfiguration($this->configuration, [
-            'omnia_ipsum' => [
+            'symfinity_omnia_ipsum' => [
                 'images' => [
                     'default_provider' => 'picsum',
                     'default_width' => 1200,
@@ -73,7 +73,7 @@ final class ConfigurationTest extends TestCase
     public function testCustomTextConfiguration(): void
     {
         $config = $this->processor->processConfiguration($this->configuration, [
-            'omnia_ipsum' => [
+            'symfinity_omnia_ipsum' => [
                 'text' => [
                     'default_paragraphs' => 10,
                     'default_sentences' => 20,
@@ -90,7 +90,7 @@ final class ConfigurationTest extends TestCase
     public function testCustomFakerConfiguration(): void
     {
         $config = $this->processor->processConfiguration($this->configuration, [
-            'omnia_ipsum' => [
+            'symfinity_omnia_ipsum' => [
                 'faker' => [
                     'locale' => 'de_DE',
                     'seed' => 42,

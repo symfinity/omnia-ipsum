@@ -16,7 +16,7 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('omnia_ipsum');
+        $treeBuilder = new TreeBuilder('symfinity_omnia_ipsum');
         /** @var ArrayNodeDefinition $root */
         $root = $treeBuilder->getRootNode();
 

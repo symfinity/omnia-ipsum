@@ -176,8 +176,8 @@ The Google Cloud Storage provider offers 13 professional, high-quality videos fr
 ### Set Default Video
 
 ```yaml
-# config/packages/omnia_ipsum.yaml
-omnia_ipsum:
+# config/packages/symfinity_omnia_ipsum.yaml
+symfinity_omnia_ipsum:
     videos:
         default_provider: 'gcs'  # Default
         default_width: 1920

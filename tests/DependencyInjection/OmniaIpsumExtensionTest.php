@@ -29,7 +29,7 @@ final class OmniaIpsumExtensionTest extends TestCase
     public function testLoadWithConfiguration(): void
     {
         $config = [
-            'omnia_ipsum' => [
+            'symfinity_omnia_ipsum' => [
                 'images' => [
                     'default_provider' => 'picsum',
                 ],
