@@ -1,6 +1,6 @@
 {
     "name": "symfinity/omnia-ipsum",
-    "description": "All-in-One Placeholder Bundle for Symfony - placeholder images, Lorem Ipsum text, and fake data for rapid prototyping",
+    "description": "All-in-One Placeholder Text, Images, Audios and Videos for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
     "homepage": "https://github.com/symfinity/omnia-ipsum",
