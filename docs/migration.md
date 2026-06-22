@@ -11,7 +11,7 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 | Test namespace | `NeuralGlitch\OmniaIpsum\Tests\` | `Symfinity\OmniaIpsum\Tests\` |
 | Bundle class | `NeuralGlitch\OmniaIpsum\OmniaIpsumBundle` | `Symfinity\OmniaIpsum\OmniaIpsumBundle` |
 | Config root key | `omnia_ipsum:` | `symfinity_omnia_ipsum:` |
-| Config file | `config/packages/symfinity_omnia_ipsum.yaml` | `config/packages/symfinity_omnia_ipsum.yaml` |
+| Config file | `config/packages/omnia_ipsum.yaml` | `config/packages/symfinity_omnia_ipsum.yaml` |
 
 ## Composer and Symfony floor
 
@@ -45,7 +45,9 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 
 4. **Twig templates** — function names are unchanged (`omnia_image`, `lorem_paragraphs`, `fake`, etc.).
 
-5. **Production** — keep the bundle disabled in `prod` (see [README](../README.md#3-disable-in-production)).
+5. **Configuration (0.1.3+)** — use root key `symfinity_omnia_ipsum:` in `config/packages/symfinity_omnia_ipsum.yaml`. Upgrading from 0.1.2? See [Upgrade](upgrade.md#013).
+
+6. **Production** — keep the bundle disabled in `prod` (see [README](../README.md#3-disable-in-production)).
 
 ## Abandon timeline
 
