@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 final class OmniaIpsumBundle extends Bundle
 {
     /** Org policy: config root {@code symfinity_omnia_ipsum} (rule 22), not {@code omnia_ipsum}. */
-    public function getContainerExtension(): ?ExtensionInterface
+    public function getContainerExtension(): ExtensionInterface
     {
         return new OmniaIpsumExtension();
     }
