@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-06-24
+
+### Changed
+
+- README: installation command uses `composer require --dev` to match dev/test-only Flex registration
+
+### Notes
+
+- No functional or API changes — documentation patch only
+
 ## [0.1.3] - 2026-06-22
 
 ### Changed

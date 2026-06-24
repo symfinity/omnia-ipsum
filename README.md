@@ -34,7 +34,7 @@ Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint 
 
 ## Installation
 ```bash
-composer require symfinity/omnia-ipsum
+composer require --dev symfinity/omnia-ipsum
 ```
 
 The Flex recipe registers the bundle for **dev** and **test** only. **Do not enable in production** — see [Installation](docs/installation.md).
