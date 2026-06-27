@@ -359,5 +359,5 @@ symfinity_omnia_ipsum:
 ## See Also
 
 - [FakerPHP Documentation](https://fakerphp.github.io/) - Complete formatter reference
-- [Usage Guide](usage.md) - More examples
+- [Quickstart](quickstart.md) - More examples
 - [Configuration](configuration.md) - Set locale and seed

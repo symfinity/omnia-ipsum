@@ -340,5 +340,5 @@ Use in templates:
 
 ## See Also
 
-- [Usage Guide](usage.md) - How to use images in templates
+- [Quickstart](quickstart.md) - How to use images in templates
 - [Configuration](configuration.md) - Set default provider

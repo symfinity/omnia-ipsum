@@ -360,6 +360,6 @@ The provider limits duration to 60 seconds to prevent this. If you still hit mem
 
 ## See Also
 
-- [Usage Guide](usage.md) - How to use audio in templates
+- [Quickstart](quickstart.md) - How to use audio in templates
 - [Configuration](configuration.md) - Set default audio settings
 - [Video Providers](videos.md) - Placeholder videos
