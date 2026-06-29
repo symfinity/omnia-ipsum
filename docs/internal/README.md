@@ -7,6 +7,6 @@ This directory is **maintainer-only**. Files here are:
 
 Use for package-scoped runbooks (release checklists, port notes, drafts).
 
-**Org-wide** release trains and intake: `specs/symfinity/symfinity/intake/omnia-ipsum-intake.md` and `classified/explore/PRODUCT-split-release-wave-1.md`.
+**Org-wide** release trains and intake notes live in the Symfinity monorepo maintainer docs (not published to the split mirror).
 
-Normative: [docs-authoring](../../../../classified/policy/guidelines/docs-authoring.md#maintainer-only-docs-docsinternal).
+Normative: Symfinity org `docs-authoring` guideline — maintainer-only `docs/internal/` section.
