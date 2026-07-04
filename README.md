@@ -50,6 +50,7 @@ The Flex recipe registers the bundle for **dev** and **test** only. **Do not ena
 - **[Text Generation](docs/text.md)** - Lorem Ipsum and Faker integration
 - **[Faker Integration](docs/faker.md)** - All available fake data formatters
 - **[Configuration](docs/configuration.md)** - Configuration options
+- **[Verification](docs/verification.md)** - Clean-app smoke and integration profile
 
 ## Requirements
 - PHP 8.2 or higher (8.1 may work; CI tests 8.2+)

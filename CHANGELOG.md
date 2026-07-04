@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2026-07-05
+
+### Added
+
+- Handbook [Verification](docs/verification.md) — P0 integration profile, clean-app smoke (`composer require --dev`, `debug:config`, Twig `omnia_image()`)
+- `integration_profile: P0` frontmatter on handbook index (OOTB consumer experience)
+
+### Changed
+
+- PHPUnit bootstrap: `tests/bootstrap.php` resolves monorepo or split-mirror Composer autoload (split CI parity)
+- Handbook: installation, quickstart, and migration use `composer require --dev` consistently
+- Installation verify step uses config root `symfinity_omnia_ipsum` (not legacy `omnia_ipsum`)
+- Migration guide: removed maintainer-only abandon-timeline note
+
+### Notes
+
+- No functional or API changes — OOTB documentation and test bootstrap hygiene
+
 ## [0.1.5] - 2026-06-29
 
 ### Added

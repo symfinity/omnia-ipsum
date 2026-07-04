@@ -5,7 +5,7 @@ Get started with Omnia Ipsum in 5 minutes.
 ## Installation
 
 ```bash
-composer require symfinity/omnia-ipsum
+composer require --dev symfinity/omnia-ipsum
 ```
 
 Bundle is auto-registered via Symfony Flex (dev and test environments only).
@@ -242,6 +242,7 @@ symfinity_omnia_ipsum:
 
 ## Next Steps
 - **[Upgrade](upgrade.md)** - Patch and relocation migration
+- **[Verification](verification.md)** - Clean-app smoke (OOTB)
 - **[Image Providers](images.md)** - Learn about all image providers
 - **[Video Providers](videos.md)** - Video options and clips
 - **[Faker Integration](faker.md)** - All available fake data formatters

@@ -1,5 +1,13 @@
 # Upgrade and migration
 
+## 0.1.6
+
+No breaking changes. Patch release: OOTB consumer verification handbook, PHPUnit bootstrap for split mirrors, and install-command consistency (`--dev`).
+
+```bash
+composer update symfinity/omnia-ipsum
+```
+
 ## 0.1.3
 
 **Configuration rename:** Symfony config root key `omnia_ipsum:` → `symfinity_omnia_ipsum:`; default file `config/packages/symfinity_omnia_ipsum.yaml`.

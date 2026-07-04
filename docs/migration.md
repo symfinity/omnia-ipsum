@@ -26,7 +26,7 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 
    ```bash
    composer remove neuralglitch/omnia-ipsum
-   composer require symfinity/omnia-ipsum
+   composer require --dev symfinity/omnia-ipsum
    ```
 
 2. **Update imports** in PHP and tests: `NeuralGlitch\OmniaIpsum` → `Symfinity\OmniaIpsum`.
@@ -48,7 +48,3 @@ Use this table when replacing the legacy Packagist package with `symfinity/omnia
 5. **Configuration (0.1.3+)** — use root key `symfinity_omnia_ipsum:` in `config/packages/symfinity_omnia_ipsum.yaml`. Upgrading from 0.1.2? See [Upgrade](upgrade.md#013).
 
 6. **Production** — keep the bundle disabled in `prod` (see [README](../README.md#3-disable-in-production)).
-
-## Abandon timeline
-
-Do not abandon `neuralglitch/omnia-ipsum` on Packagist until `symfinity/omnia-ipsum` is installable and documented (wave-1 program gate G5 / intake M4).

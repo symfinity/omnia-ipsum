@@ -1,3 +1,7 @@
+---
+integration_profile: P0
+---
+
 # Overview
 
 Handbook for **symfinity/omnia-ipsum** — placeholder images, media, Lorem Ipsum, and Faker data for Symfony prototyping (dev/test only).
@@ -15,3 +19,4 @@ Handbook for **symfinity/omnia-ipsum** — placeholder images, media, Lorem Ipsu
 - [Text](text.md)
 - [Faker](faker.md)
 - [Commands](commands.md)
+- [Verification](verification.md)

@@ -7,7 +7,7 @@ Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint 
 ## Composer
 
 ```bash
-composer require symfinity/omnia-ipsum
+composer require --dev symfinity/omnia-ipsum
 ```
 
 ## Symfony Flex
@@ -33,15 +33,17 @@ For production content, use real assets and data sources instead of placeholder 
 
 When Flex is unavailable:
 
-1. `composer require symfinity/omnia-ipsum`
+1. `composer require --dev symfinity/omnia-ipsum`
 2. Register `Symfinity\OmniaIpsum\OmniaIpsumBundle` for **`dev`** and **`test`** only in `config/bundles.php`
 3. Copy `config/packages/symfinity_omnia_ipsum.yaml` from the package into your project
 
 ## Verify installation
 
 ```bash
-php bin/console debug:config omnia_ipsum
+php bin/console debug:config symfinity_omnia_ipsum
 ```
+
+See [Verification](verification.md) for clean-app smoke steps.
 
 ## Next steps
 
