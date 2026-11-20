@@ -212,16 +212,19 @@ Migrating from `neuralglitch/omnia-ipsum`? See [migration.md](migration.md).
 ## Configuration
 ```yaml
 # config/packages/symfinity_omnia_ipsum.yaml
-symfinity_omnia_ipsum:
-    images:
-        default_provider: 'picsum'      # Default image provider
-        
-    videos:
-        default_duration: 30            # Default video duration (seconds)
-        
-    faker:
-        locale: 'de_DE'                 # German fake data
-        seed: 42                        # Reproducible data
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_provider: 'picsum'      # Default image provider
+
+        videos:
+            default_duration: 30            # Default video duration (seconds)
+
+        faker:
+            locale: 'de_DE'                 # German fake data
+            seed: 42                        # Reproducible data
+
+when@test: *omnia_ipsum
 ```
 
 **See [Configuration](configuration.md) for all options.**

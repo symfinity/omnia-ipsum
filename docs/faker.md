@@ -253,9 +253,12 @@ Set locale in configuration:
 
 ```yaml
 # config/packages/symfinity_omnia_ipsum.yaml
-symfinity_omnia_ipsum:
-    faker:
-        locale: 'de_DE'  # German data
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        faker:
+            locale: 'de_DE'  # German data
+
+when@test: *omnia_ipsum
 ```
 
 Then use in templates:
@@ -274,9 +277,12 @@ Set a seed for consistent data:
 
 ```yaml
 # config/packages/symfinity_omnia_ipsum.yaml
-symfinity_omnia_ipsum:
-    faker:
-        seed: 42  # Same data every time
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        faker:
+            seed: 42  # Same data every time
+
+when@test: *omnia_ipsum
 ```
 
 ## Complete Examples

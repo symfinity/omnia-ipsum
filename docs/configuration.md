@@ -4,40 +4,42 @@ Complete configuration reference for Omnia Ipsum.
 
 ## Default Configuration
 
+The shipped file applies in `dev` and `test` only. Prod never sees the extension.
+
 ```yaml
 # config/packages/symfinity_omnia_ipsum.yaml
-symfinity_omnia_ipsum:
-    # Image settings
-    images:
-        default_provider: 'placeholder'  # Default image provider
-        default_width: 600               # Default width in pixels
-        default_height: 400              # Default height in pixels
-        default_background: 'cccccc'     # Default background color (hex, no #)
-        default_foreground: '333333'     # Default foreground/text color (hex, no #)
-        default_text: null               # Default text (null = dimensions)
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        # Image settings
+        images:
+            default_provider: 'picsum'       # Available: picsum, placeholder, dummyimage, placehold, ui-avatars
+            default_width: 600               # Default width (1-5000)
+            default_height: 400              # Default height (1-5000)
 
-    # Video settings
-    videos:
-        default_provider: 'gcs'          # Default video provider
-        default_width: 1920              # Default width in pixels (1-3840)
-        default_height: 1080             # Default height in pixels (1-2160)
-        default_duration: 30             # Default duration in seconds (1-120)
+        # Video settings
+        videos:
+            default_provider: 'gcs'          # Available: gcs (Google Cloud Storage)
+            default_width: 1920              # Default width (1-3840)
+            default_height: 1080             # Default height (1-2160)
+            default_duration: 30             # Default duration in seconds (1-120)
 
-    # Audio settings
-    audios:
-        default_provider: 'silence'      # Default audio provider
-        default_duration: 10             # Default duration in seconds (1-60)
+        # Audio settings
+        audios:
+            default_provider: 'silence'      # Available: silence
+            default_duration: 10             # Default duration in seconds (1-60)
 
-    # Lorem Ipsum text settings
-    text:
-        default_paragraphs: 3            # Default number of paragraphs
-        default_sentences: 5             # Default number of sentences
-        default_words: 50                # Default number of words
+        # Lorem Ipsum text settings
+        text:
+            default_paragraphs: 3            # Default paragraphs (1-100)
+            default_sentences: 5             # Default sentences (1-100)
+            default_words: 50                # Default words (1-1000)
 
-    # Faker settings
-    faker:
-        locale: 'en_US'                  # Faker locale (e.g., de_DE, fr_FR, en_US)
-        seed: null                       # Seed for reproducible fake data (null = random)
+        # Faker settings
+        faker:
+            locale: 'en_US'                  # Locale: en_US, de_DE, fr_FR, es_ES, etc.
+            # seed omitted = random (set an int in your app config to fix Faker output)
+
+when@test: *omnia_ipsum
 ```
 
 ## Image Configuration
@@ -47,9 +49,12 @@ symfinity_omnia_ipsum:
 Choose your preferred default image provider:
 
 ```yaml
-symfinity_omnia_ipsum:
-    images:
-        default_provider: 'picsum'  # Use Picsum Photos by default
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_provider: 'picsum'  # Use Picsum Photos by default
+
+when@test: *omnia_ipsum
 ```
 
 **Available providers:** `placeholder`, `dummyimage`, `picsum`, `placehold`, `ui-avatars`
@@ -59,10 +64,13 @@ symfinity_omnia_ipsum:
 Set default dimensions for all placeholder images:
 
 ```yaml
-symfinity_omnia_ipsum:
-    images:
-        default_width: 1200   # Wider images by default
-        default_height: 800   # Taller images by default
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_width: 1200   # Wider images by default
+            default_height: 800   # Taller images by default
+
+when@test: *omnia_ipsum
 ```
 
 ### Default Colors
@@ -70,10 +78,13 @@ symfinity_omnia_ipsum:
 Set default colors (hex, without #):
 
 ```yaml
-symfinity_omnia_ipsum:
-    images:
-        default_background: '007bff'  # Blue background
-        default_foreground: 'ffffff'  # White text
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_background: '007bff'  # Blue background
+            default_foreground: 'ffffff'  # White text
+
+when@test: *omnia_ipsum
 ```
 
 ### Default Text
@@ -81,9 +92,12 @@ symfinity_omnia_ipsum:
 Set default text for placeholders:
 
 ```yaml
-symfinity_omnia_ipsum:
-    images:
-        default_text: 'Preview Image'  # Custom default text
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_text: 'Preview Image'  # Custom default text
+
+when@test: *omnia_ipsum
 ```
 
 ## Text Configuration
@@ -91,11 +105,14 @@ symfinity_omnia_ipsum:
 ### Lorem Ipsum Defaults
 
 ```yaml
-symfinity_omnia_ipsum:
-    text:
-        default_paragraphs: 5   # Longer default content
-        default_sentences: 10   # More sentences
-        default_words: 100      # More words
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        text:
+            default_paragraphs: 5   # Longer default content
+            default_sentences: 10   # More sentences
+            default_words: 100      # More words
+
+when@test: *omnia_ipsum
 ```
 
 ## Faker Configuration
@@ -105,9 +122,12 @@ symfinity_omnia_ipsum:
 Change the Faker locale for localized fake data:
 
 ```yaml
-symfinity_omnia_ipsum:
-    faker:
-        locale: 'de_DE'  # German fake data
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        faker:
+            locale: 'de_DE'  # German fake data
+
+when@test: *omnia_ipsum
 ```
 
 **Popular locales:**
@@ -127,9 +147,12 @@ symfinity_omnia_ipsum:
 Set a seed for consistent fake data across page loads:
 
 ```yaml
-symfinity_omnia_ipsum:
-    faker:
-        seed: 42  # Always generate the same fake data
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        faker:
+            seed: 42  # Always generate the same fake data
+
+when@test: *omnia_ipsum
 ```
 
 **Use cases:**
@@ -175,23 +198,26 @@ when@prod:
 
 ```yaml
 # config/packages/symfinity_omnia_ipsum.yaml
-symfinity_omnia_ipsum:
-    images:
-        default_provider: 'picsum'
-        default_width: 1200
-        default_height: 800
-        default_background: '007bff'
-        default_foreground: 'ffffff'
-        default_text: 'Preview'
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_provider: 'picsum'
+            default_width: 1200
+            default_height: 800
+            default_background: '007bff'
+            default_foreground: 'ffffff'
+            default_text: 'Preview'
 
-    text:
-        default_paragraphs: 5
-        default_sentences: 10
-        default_words: 100
+        text:
+            default_paragraphs: 5
+            default_sentences: 10
+            default_words: 100
 
-    faker:
-        locale: 'en_US'
-        seed: null  # Random data
+        faker:
+            locale: 'en_US'
+            seed: null  # Random data
+
+when@test: *omnia_ipsum
 ```
 
 ## Overriding in Templates
@@ -268,9 +294,12 @@ The bundle also validates configuration automatically:
 
 ```yaml
 # ❌ Invalid: Width too large
-symfinity_omnia_ipsum:
-    images:
-        default_width: 10000  # Max: 5000
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_width: 10000  # Max: 5000
+
+when@test: *omnia_ipsum
 ```
 
 **Valid ranges:**

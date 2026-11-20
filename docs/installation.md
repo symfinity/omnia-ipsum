@@ -14,7 +14,7 @@ composer require --dev symfinity/omnia-ipsum
 
 The recipe applies:
 
-- `config/packages/symfinity_omnia_ipsum.yaml` from the package default
+- `config/packages/symfinity_omnia_ipsum.yaml` from the package default, with settings under `when@dev` and `when@test` only
 - Bundle registration for **`dev` and `test`** environments only
 
 ## Production

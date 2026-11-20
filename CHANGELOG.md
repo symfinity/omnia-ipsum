@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.7] - 2026-11-20
+
+### Fixed
+
+- The shipped `config/packages/symfinity_omnia_ipsum.yaml` applies under `when@dev` and `when@test` only, matching the Flex recipe that enables the bundle in those environments. A prod container no longer tries to load `symfinity_omnia_ipsum`
+- PHPUnit bootstrap registers this package's PSR-4 prefixes from `composer.json` after loading the monorepo or package autoload
+
+### Notes
+
+- Settings inside the file are unchanged
+
 ## [0.1.6] - 2026-07-05
 
 ### Added

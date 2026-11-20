@@ -1,5 +1,25 @@
 # Upgrade and migration
 
+## 0.1.7
+
+No breaking changes to settings. The shipped `config/packages/symfinity_omnia_ipsum.yaml` now applies only under `when@dev` and `when@test`, the same environments where the Flex recipe enables the bundle. A root-level `symfinity_omnia_ipsum:` key in that file makes the prod container look for an extension that is not registered.
+
+If you still have the 0.1.6 file and you have not customized it, let Flex overwrite it on update. If you have local edits, move the existing key under both environments:
+
+```yaml
+# config/packages/symfinity_omnia_ipsum.yaml
+when@dev: &omnia_ipsum
+    symfinity_omnia_ipsum:
+        images:
+            default_provider: 'picsum'
+
+when@test: *omnia_ipsum
+```
+
+```bash
+composer update symfinity/omnia-ipsum
+```
+
 ## 0.1.6
 
 No breaking changes. Patch release: OOTB consumer verification handbook, PHPUnit bootstrap for split mirrors, and install-command consistency (`--dev`).
